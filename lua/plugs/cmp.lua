@@ -1,9 +1,23 @@
 -- nvim-cmp setup
+local luasnip = require "luasnip"
 local cmp = require 'cmp'
 cmp.setup {
+  completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1 },
+  experimental = { native_menu = false, ghost_text = false },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        buffer = "[Buffer]",
+        luasnip = "[Snip]",
+        nvim_lua = "[Lua]",
+        treesitter = "[Treesitter]",
+      })[entry.source.name]
+      return vim_item
     end,
   },
   mapping = {
@@ -37,24 +51,29 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-	{ name = 'buffer' },
+    { name = "treesitter" },
+    { name = "buffer" },
+    { name = "luasnip" },
+    { name = "nvim_lua" },
+    { name = "path" },
+    { name = "spell" },
+    { name = "emoji" },
+    { name = "calc" },
   },
 }
 
--- cmdline
-cmp.setup.cmdline(":", {
-    sources = {
-      { name = "cmdline" },
-    },
+-- Use buffer source for `/`
+cmp.setup.cmdline("/", {
+  sources = {
+    { name = "buffer" },
+  },
 })
 
--- lsp_document_symbols
-cmp.setup.cmdline('/', {
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp_document_symbol' }
-    }, {
-      { name = 'buffer' }
-    })
+-- Use cmdline & path source for ':'
+cmp.setup.cmdline(":", {
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
 })
