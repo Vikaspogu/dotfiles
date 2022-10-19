@@ -39,7 +39,7 @@ map("n", "<F3>", ":Autoformat<CR>", { silent = true })
 map("n", "<leader>df", ":DiffviewOpen<CR>", { silent = true })
 
 -- Lazygit bindings
-map("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
+map("n", "<leader>lg", ":LazyGit<CR>", { silent = true })
 
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true })

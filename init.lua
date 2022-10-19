@@ -1,18 +1,16 @@
 -- GENERAL SETTINGS
 -- Dependencies
-require("plugins")
+require "config"
+require("plugins").setup()
 require("keybindings")
 require("lsp")
 
 -- Plugin specific configs.
-require("plugs.gitsigns")
 require("plugs.telescope")
 require("plugs.luasnip")
-require("plugs.cmp")
 require("plugs.nvimtree")
 require("plugs.mason")
 require("plugs.lualine")
-require("plugs.indent_blankline")
 require('plugs.formatter')
 
 -- Incremental live completion (note: this is now a default on master).
