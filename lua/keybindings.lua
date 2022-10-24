@@ -13,11 +13,11 @@ vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true,
 
 -- Functional wrapper for mapping custom keybindings
 function map(mode, lhs, rhs, opts)
-    local options = { noremap = true }
-    if opts then
-        options = vim.tbl_extend("force", options, { noremap = true, silent = true })
-    end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	local options = { noremap = true }
+	if opts then
+		options = vim.tbl_extend("force", options, { noremap = true, silent = true })
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 map("n", "++", "<plug>NERDCommenterToggle", { silent = true })
@@ -83,6 +83,3 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', { noremap = true, si
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
 
--- Formatter
-map("n", "<leader>f", ":Format<CR>", { silent = true })
-map("n", "<leader>F", ":FormatWrite<CR>", { silent = true })

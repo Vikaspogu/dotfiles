@@ -85,6 +85,14 @@ _G.packer_plugins = {
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["attempt.nvim"] = {
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19config.attempt\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/attempt.nvim",
+    url = "https://github.com/m-demare/attempt.nvim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -160,6 +168,21 @@ _G.packer_plugins = {
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["dressing.nvim"] = {
+    load_after = {
+      ["legendary.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
+  everforest = {
+    config = { "\27LJ\2\nn\0\0\3\0\6\0\n6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\15everforest\16colorscheme\bcmd\"everforest_better_performance\6g\bvim\0" },
+    loaded = true,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/formatter.nvim",
@@ -173,6 +196,12 @@ _G.packer_plugins = {
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim",
     wants = { "plenary.nvim" }
+  },
+  ["hlargs.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18config.hlargs\frequire\0" },
+    loaded = true,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
+    url = "https://github.com/m-demare/hlargs.nvim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -193,6 +222,7 @@ _G.packer_plugins = {
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["legendary.nvim"] = {
+    after = { "dressing.nvim" },
     commands = { "Legendary" },
     config = { "\27LJ\2\n>\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\21config.legendary\frequire\0" },
     keys = { { "", "<C-p>" } },
@@ -200,7 +230,8 @@ _G.packer_plugins = {
     needs_bufread = false,
     only_cond = false,
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/legendary.nvim",
-    url = "https://github.com/mrjones2014/legendary.nvim"
+    url = "https://github.com/mrjones2014/legendary.nvim",
+    wants = { "dressing.nvim" }
   },
   ["lightline.vim"] = {
     loaded = true,
@@ -298,6 +329,16 @@ _G.packer_plugins = {
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["refactoring.nvim"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23config.refactoring\frequire\0" },
+    keys = { { "", "<leader>r" } },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/refactoring.nvim",
+    url = "https://github.com/ThePrimeagen/refactoring.nvim",
+    wants = { "telescope.nvim" }
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -318,15 +359,10 @@ _G.packer_plugins = {
     path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
+  ["vim-autoformat"] = {
     loaded = true,
-    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/vim-commentary",
-    url = "https://github.com/tpope/vim-commentary"
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/vim-autoformat",
+    url = "https://github.com/vim-autoformat/vim-autoformat"
   },
   ["vim-floaterm"] = {
     loaded = true,
@@ -344,8 +380,10 @@ _G.packer_plugins = {
     url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   ["vim-surround"] = {
-    loaded = true,
-    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/start/vim-surround",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
   ["which-key.nvim"] = {
@@ -360,10 +398,13 @@ _G.packer_plugins = {
 
 time([[Defining packer_plugins]], false)
 local module_lazy_loads = {
+  ["^attempt"] = "attempt.nvim",
   ["^legendary"] = "legendary.nvim",
   ["^neogen"] = "neogen",
   ["^nvim%-autopairs"] = "nvim-autopairs",
-  ["^nvim%-autopairs%.completion%.cmp"] = "nvim-autopairs"
+  ["^nvim%-autopairs%.completion%.cmp"] = "nvim-autopairs",
+  ["^refactoring"] = "refactoring.nvim",
+  ["^telescope"] = "refactoring.nvim"
 }
 local lazy_load_called = {['packer.load'] = true}
 local function lazy_load_module(module_name)
@@ -398,6 +439,14 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: hlargs.nvim
+time([[Config for hlargs.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18config.hlargs\frequire\0", "config", "hlargs.nvim")
+time([[Config for hlargs.nvim]], false)
+-- Config for: everforest
+time([[Config for everforest]], true)
+try_loadstring("\27LJ\2\nn\0\0\3\0\6\0\n6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\15everforest\16colorscheme\bcmd\"everforest_better_performance\6g\bvim\0", "config", "everforest")
+time([[Config for everforest]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17config.alpha\frequire\0", "config", "alpha-nvim")
@@ -405,12 +454,13 @@ time([[Config for alpha-nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Neogen lua require("packer.load")({'neogen'}, { cmd = "Neogen", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Legendary lua require("packer.load")({'legendary.nvim'}, { cmd = "Legendary", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Neogen lua require("packer.load")({'neogen'}, { cmd = "Neogen", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
+vim.cmd [[noremap <silent> <leader>r <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>r", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <C-p> <cmd>lua require("packer.load")({'legendary.nvim'}, { keys = "<lt>C-p>", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
@@ -418,9 +468,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'gitsigns.nvim', 'indent-blankline.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'indent-blankline.nvim', 'gitsigns.nvim', 'vim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

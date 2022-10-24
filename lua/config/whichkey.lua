@@ -38,7 +38,7 @@ local function normal_keymap()
     name = "Find",
     f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
     d = { "<cmd>lua require('utils.finder').find_dotfiles()<cr>", "Dotfiles" },
-    b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers" },
+    b = { "cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers" },
     h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Help" },
     m = { "<cmd>lua require('telescope.builtin').marks()<cr>", "Marks" },
     o = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", "Old Files" },
@@ -53,7 +53,6 @@ local function normal_keymap()
     name = "Project",
     p = { "<cmd>lua require'telescope'.extensions.project.project{display_type = 'full'}<cr>", "List" },
     s = { "<cmd>lua require'telescope'.extensions.repo.list{}<cr>", "Search" },
-    P = { "<cmd>TermExec cmd='BROWSER=brave yarn dev'<cr>", "Slidev" },
   }
 
   local keymap = {
@@ -81,43 +80,7 @@ local function normal_keymap()
       m = { "<Cmd>JABSOpen<Cr>", "Menu" },
     },
 
-    c = {
-      name = "Code",
-      g = { "<cmd>Neogen func<Cr>", "Func Doc" },
-      G = { "<cmd>Neogen class<Cr>", "Class Doc" },
-      d = { "<cmd>DogeGenerate<Cr>", "Generate Doc" },
-      o = { "<cmd>Telescope aerial<Cr>", "Outline" },
-      T = { "<cmd>TodoTelescope<Cr>", "TODO" },
-      x = {
-        name = "Swap Next",
-        f = "Function",
-        p = "Parameter",
-        c = "Class",
-      },
-      X = {
-        name = "Swap Previous",
-        f = "Function",
-        p = "Parameter",
-        c = "Class",
-      },
-      -- f = "Select Outer Function",
-      -- F = "Select Outer Class",
-    },
-
-    d = {
-      name = "Debug",
-    },
-
-    -- Database
-    D = {
-      name = "Database",
-      u = { "<Cmd>DBUIToggle<Cr>", "Toggle UI" },
-      f = { "<Cmd>DBUIFindBuffer<Cr>", "Find buffer" },
-      r = { "<Cmd>DBUIRenameBuffer<Cr>", "Rename buffer" },
-      q = { "<Cmd>DBUILastQueryInfo<Cr>", "Last query info" },
-    },
-
-    f = keymap_f,
+	f = keymap_f,
     p = keymap_p,
 
     j = {
@@ -133,63 +96,6 @@ local function normal_keymap()
     ["4"] = { "<Cmd>lua require('harpoon.term').gotoTerminal(2)<Cr>", "Terminal 2" },
     ["5"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,1)<Cr>", "Command 1" },
     ["6"] = { "<Cmd>lua require('harpoon.term').sendCommand(1,2)<Cr>", "Command 2" },
-
-    -- t = {
-    --   name = "Test",
-    --   S = { "<cmd>UltestSummary<cr>", "Summary" },
-    --   a = { "<cmd>Ultest<cr>", "All" },
-    --   c = { "<cmd>UltestClear<cr>", "Clear" },
-    --   d = { "<cmd>UltestDebug<cr>", "Debug" },
-    --   f = { "<cmd>TestFile<cr>", "File" },
-    --   l = { "<cmd>TestLast<cr>", "Last" },
-    --   n = { "<cmd>TestNearest<cr>", "Nearest" },
-    --   o = { "<cmd>UltestOutput<cr>", "Output" },
-    --   s = { "<cmd>TestSuite<cr>", "Suite" },
-    --   v = { "<cmd>TestVisit<cr>", "Visit" },
-    --   p = { "<Plug>PlenaryTestFile", "PlenaryTestFile" },
-    -- },
-
-    -- keymap_c.s = { "<cmd>OverseerRun<cr>", "Overseer Run" }
-    -- keymap_c.S = { "<cmd>OverseerToggle!<cr>", "Overseer Toggle" }
-    -- keymap_c.a = { "<cmd>OverseerQuickAction<cr>", "Overseer Quick Action" }
-    -- keymap_c.A = { "<cmd>OverseerTaskAction<cr>", "Overseer Task Action" }
-
-    o = {
-      name = "Overseer",
-      C = { "<cmd>OverseerClose<cr>", "OverseerClose" },
-      a = { "<cmd>OverseerTaskAction<cr>", "OverseerTaskAction" },
-      b = { "<cmd>OverseerBuild<cr>", "OverseerBuild" },
-      c = { "<cmd>OverseerRunCmd<cr>", "OverseerRunCmd" },
-      d = { "<cmd>OverseerDeleteBundle<cr>", "OverseerDeleteBundle" },
-      l = { "<cmd>OverseerLoadBundle<cr>", "OverseerLoadBundle" },
-      o = { "<cmd>OverseerOpen!<cr>", "OverseerOpen" },
-      q = { "<cmd>OverseerQuickAction<cr>", "OverseerQuickAction" },
-      r = { "<cmd>OverseerRun<cr>", "OverseerRun" },
-      s = { "<cmd>OverseerSaveBundle<cr>", "OverseerSaveBundle" },
-      t = { "<cmd>OverseerToggle!<cr>", "OverseerToggle" },
-    },
-
-    t = {
-      name = "Test",
-      a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
-      f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
-      F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
-      l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
-      L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
-      n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
-      N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
-      o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
-      S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
-      s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
-      p = { "<Plug>PlenaryTestFile", "PlenaryTestFile" },
-      v = { "<cmd>TestVisit<cr>", "Visit" },
-      x = { "<cmd>TestSuite<cr>", "Suite" },
-      t = {
-        name = "Test",
-        l = { "<cmd>TestLast<cr>", "Run Last" },
-        n = { "<cmd>TestNearest<cr>", "Run Nearest" },
-      },
-    },
 
     r = {
       name = "Refactor",
@@ -209,9 +115,6 @@ local function normal_keymap()
 
     s = {
       name = "Search",
-      o = { [[ <Esc><Cmd>lua require('spectre').open()<CR>]], "Open" },
-      c = { [[ <Esc><Cmd>lua require('utils.cht').cht_input()<CR>]], "cht.sh" },
-      s = { [[ <Esc><Cmd>lua require('utils.term').so()<CR>]], "Stack Overflow" },
       w = { [[ <Esc><Cmd>lua require("telescope").extensions.arecibo.websearch()<CR>]], "Web" },
     },
 
@@ -242,7 +145,7 @@ local function normal_keymap()
       i = { "<cmd>lua require('utils.term').interactive_cheatsheet_toggle()<CR>", "Interactive Cheatsheet" },
     },
 
-    z = {
+    z = { 
       name = "System",
       -- c = { "<cmd>PackerCompile<cr>", "Compile" },
       c = { "<cmd>Telescope neoclip<cr>", "Clipboard" },
@@ -279,51 +182,6 @@ local function normal_keymap()
       h = { name = "Hunk" },
       t = { name = "Toggle" },
       x = { "<cmd>lua require('telescope.builtin').git_branches()<cr>", "Switch Branch" },
-      -- g = {
-      --   name = "+Github",
-      --   c = {
-      --     name = "+Commits",
-      --     c = { "<cmd>GHCloseCommit<cr>", "Close" },
-      --     e = { "<cmd>GHExpandCommit<cr>", "Expand" },
-      --     o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
-      --     p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
-      --     z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
-      --   },
-      --   i = {
-      --     name = "+Issues",
-      --     p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
-      --   },
-      --   l = {
-      --     name = "+Litee",
-      --     t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
-      --   },
-      --   r = {
-      --     name = "+Review",
-      --     b = { "<cmd>GHStartReview<cr>", "Begin" },
-      --     c = { "<cmd>GHCloseReview<cr>", "Close" },
-      --     d = { "<cmd>GHDeleteReview<cr>", "Delete" },
-      --     e = { "<cmd>GHExpandReview<cr>", "Expand" },
-      --     s = { "<cmd>GHSubmitReview<cr>", "Submit" },
-      --     z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
-      --   },
-      --   p = {
-      --     name = "+Pull Request",
-      --     c = { "<cmd>GHClosePR<cr>", "Close" },
-      --     d = { "<cmd>GHPRDetails<cr>", "Details" },
-      --     e = { "<cmd>GHExpandPR<cr>", "Expand" },
-      --     o = { "<cmd>GHOpenPR<cr>", "Open" },
-      --     p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
-      --     r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
-      --     t = { "<cmd>GHOpenToPR<cr>", "Open To" },
-      --     z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
-      --   },
-      --   t = {
-      --     name = "+Threads",
-      --     c = { "<cmd>GHCreateThread<cr>", "Create" },
-      --     n = { "<cmd>GHNextThread<cr>", "Next" },
-      --     t = { "<cmd>GHToggleThread<cr>", "Toggle" },
-      --   },
-      -- },
     },
   }
   whichkey.register(keymap, opts)
@@ -389,14 +247,6 @@ local function code_keymap()
       keymap_c = {
         name = "Code",
         r = { "<cmd>luafile %<cr>", "Run" },
-      }
-    elseif ft == "rust" then
-      keymap_c = {
-        name = "Code",
-        r = { "<cmd>execute 'Cargo run' | startinsert<cr>", "Run" },
-        D = { "<cmd>RustDebuggables<cr>", "Debuggables" },
-        h = { "<cmd>RustHoverActions<cr>", "Hover Actions" },
-        R = { "<cmd>RustRunnables<cr>", "Runnables" },
       }
     elseif ft == "go" then
       keymap_c = {
