@@ -197,6 +197,16 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/gitsigns.nvim",
     wants = { "plenary.nvim" }
   },
+  harpoon = {
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19config.harpoon\frequire\0" },
+    keys = { { "", "<leader>j" } },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/vikaspogu/.local/share/nvim/site/pack/packer/opt/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon",
+    wants = { "telescope.nvim" }
+  },
   ["hlargs.nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18config.hlargs\frequire\0" },
     loaded = true,
@@ -399,6 +409,11 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 local module_lazy_loads = {
   ["^attempt"] = "attempt.nvim",
+  ["^harpoon"] = "harpoon",
+  ["^harpoon%.cmd%-ui"] = "harpoon",
+  ["^harpoon%.mark"] = "harpoon",
+  ["^harpoon%.term"] = "harpoon",
+  ["^harpoon%.ui"] = "harpoon",
   ["^legendary"] = "legendary.nvim",
   ["^neogen"] = "neogen",
   ["^nvim%-autopairs"] = "nvim-autopairs",
@@ -439,10 +454,6 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: hlargs.nvim
-time([[Config for hlargs.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18config.hlargs\frequire\0", "config", "hlargs.nvim")
-time([[Config for hlargs.nvim]], false)
 -- Config for: everforest
 time([[Config for everforest]], true)
 try_loadstring("\27LJ\2\nn\0\0\3\0\6\0\n6\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\15everforest\16colorscheme\bcmd\"everforest_better_performance\6g\bvim\0", "config", "everforest")
@@ -451,26 +462,31 @@ time([[Config for everforest]], false)
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17config.alpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
+-- Config for: hlargs.nvim
+time([[Config for hlargs.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18config.hlargs\frequire\0", "config", "hlargs.nvim")
+time([[Config for hlargs.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Legendary lua require("packer.load")({'legendary.nvim'}, { cmd = "Legendary", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Neogen lua require("packer.load")({'neogen'}, { cmd = "Neogen", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Legendary lua require("packer.load")({'legendary.nvim'}, { cmd = "Legendary", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
 vim.cmd [[noremap <silent> <leader>r <cmd>lua require("packer.load")({'refactoring.nvim'}, { keys = "<lt>leader>r", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <C-p> <cmd>lua require("packer.load")({'legendary.nvim'}, { keys = "<lt>C-p>", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <leader>j <cmd>lua require("packer.load")({'harpoon'}, { keys = "<lt>leader>j", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'indent-blankline.nvim', 'gitsigns.nvim', 'vim-surround'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'vim-surround', 'gitsigns.nvim', 'indent-blankline.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

@@ -157,6 +157,17 @@ function M.setup()
 			end,
 		}
 
+		-- Harpoon
+		use {
+		  "ThePrimeagen/harpoon",
+		  keys = { [[<leader>j]] },
+		  module = { "harpoon", "harpoon.cmd-ui", "harpoon.mark", "harpoon.ui", "harpoon.term" },
+		  wants = { "telescope.nvim" },
+		  config = function()
+			require("config.harpoon").setup()
+		  end,
+		}
+
 		use 'vim-autoformat/vim-autoformat'
 
 		-- semantic Highlight
