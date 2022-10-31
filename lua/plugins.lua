@@ -87,7 +87,7 @@ function M.setup()
 				vim.g.everforest_better_performance = 1
 				vim.cmd.colorscheme [[everforest]]
 			end,
-			disable = false,
+			disable = true,
 		}
 		use {
 			"projekt0n/github-nvim-theme",
@@ -112,6 +112,8 @@ function M.setup()
 		use 'bluz71/vim-moonfly-colors'
 		use 'tanvirtin/monokai.nvim'
 		use 'itchyny/lightline.vim' -- Fancier statusline
+
+		use 'fatih/vim-go'
 		-- Add git related info in the signs columns and popups
 		use {
 			"lewis6991/gitsigns.nvim",
