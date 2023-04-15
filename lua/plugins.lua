@@ -107,6 +107,13 @@ function M.setup()
 			end,
 			disable = true,
 		}
+		use {
+			"rebelot/kanagawa.nvim",
+			config = function()
+				vim.cmd "colorscheme kanagawa"
+			end,
+			disable = false,
+		}
 		use 'joshdick/onedark.vim' -- Theme inspired by Atom
 
 		use 'bluz71/vim-moonfly-colors'

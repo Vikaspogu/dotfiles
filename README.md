@@ -1,5 +1,15 @@
 # dotfiles
 
+## Install brewfile
+
+If you want to use a brewfile from a non-standard place.
+
+```bash
+cd ~/.config/
+git clone git@github.com:Vikaspogu/dotfiles.git nvim
+brew bundle install --file=nvim/Brewfile
+```
+
 ## Plugins
 
 ```bash
