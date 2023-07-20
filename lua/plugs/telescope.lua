@@ -3,7 +3,7 @@ require('telescope').setup {
   extensions = {
     project = {
       base_dirs = {
-		{path = '~/Documents/Github'},
+		{path = '~/Documents/git-repos/'},
       },
       hidden_files = true, -- default: false
       theme = "dropdown",
@@ -16,7 +16,7 @@ require('telescope').setup {
           "--no-ignore-vcs",
         },
         search_dirs = {
-          "~/Documents/Github/k8s-gitops/",
+          "~/Documents/git-repos/k8s-gitops/",
         },
       },
     },
